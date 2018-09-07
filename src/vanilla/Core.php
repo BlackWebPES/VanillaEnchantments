@@ -52,11 +52,11 @@ class Core extends PluginBase implements Listener{
 		$this->saveDefaultConfig();
 			
 		if($this->getConfig()->get("version", null) !== self::CONFIG_VER){
-			$this->getLogger()->info("Outdated config version detected, updating config...");
+			$this->getLogger()->info("outdated config version detected updating config");
 			$this->saveResource("config.yml", true);
 		}
 			
-		$this->getLogger()->info("Registering enchantments and enchanted books...");
+		$this->getLogger()->info("registering enchantments and enchanted books");
 			
 		$this->registerTypes();
 			
@@ -67,7 +67,7 @@ class Core extends PluginBase implements Listener{
 	
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info("Vanilla enchantments were successfully registered");
+		$this->getLogger()->info("vanilla enchantments were successfully registered");
 	}
 	
 	public function registerTypes() : void{
